@@ -20,5 +20,31 @@ yarn run build
 yarn run lint
 ```
 ### TODO
-- [x] cleanup
-- [ ] trickle down (add20)
+overall:
+- [ ] RWD;
+- [ ] trickle down (add20) functionality as per spec;
+- [ ] cleanup
+- [ ] ensure dynamic routes do their jobs
+- [ ] PWA
+
+HTML/CSS
+- [ ] Sass features beyond scoping - mixins, variables
+- [ ]  no semantic html tags (a lot of divs, poor accessibility);
+- [ ] styling the same thing twice on a single file (App.vue —> #app)
+- [ ] inline styling in some places
+
+JS
+- [ ] naming convention could be better (eg. Boolean variables starting with `is` || `are` (allBearsRenderedAlready -> areAllBearsRendered)
+- [ ] `let self = this;` used instead of arrow function
+- [ ] mix of ES5 and ES6:
+- [ ] variables (`var`, `let`, `const`)
+- [ ] sometimes using arrow functions, sometimes not
+- [ ] sometimes using string interpolation, sometimes not
+
+Vue:
+- [ ] event modifiers sometimes unnecessary used (Details.vue -> .native on button tag)
+- [ ] views could be divided into components to improve readability
+- [ ] a lot of logic in the templates
+
+Tests:
+- [ ] tests
