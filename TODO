@@ -1,0 +1,81 @@
+the final sprint:
+[v] stylowanie karty
+[v] spinning loading
+[v] błąd w respawnie Details
+[v] kierowanie strzałkami + strzałkami
+[v] flip transition
+
+
+ALL RIGHT:
+[v] renaming
+[v] dynamic fetching
+[] cleanup
+[] navbar
+[] czemu tak dziwnie się wczytują przy wejściu przez url??
+[] loading: lepszy chyba jeden stały niż taki migający
+[] prześwitujący error screen
+[] warunkowe tranzycje
+
+[] sposób skutecznego pobierania wartości tamże
+
+
+
+[] detail cards
+  [v] get all there
+  [] styling
+  [v] best served with
+  [v] similar beers
+
+
+tooltip beergrid functionality
+[] standarize event names
+
+
+[v] proper details overlay
+[v] router
+  [v] back button does not work in current setup
+      => solution: watch route changes and bind new route pathnames with currentBeer in the App
+  [v] separate BeerTile into Tile and Details
+  [v] link em up
+  [v] two paths, one rendering nothing, the other - beer details
+[v] scrolling functionality
+
+
+1. have all the beers accessible
+  download all beers at initial render -> show only first 20
+          ALBO
+
+  akrtywne reagowanie  - details wysyła zapytanie o param, a jeżeli nie ma go w App w fetched beer, dokonuje fetcha
+
+Overall comments:
+- poor RWD
+- some development stage leftovers in the code (eg. todo list)
++ nice starting screen and loading screen :)
++/- good techniques used (eg. Dynamic route loading) but there is no way to get to the dynamically loaded route
++/- trying to make it a PWA (not working though)
++ neat and readable project structure
++ clear division into views and components
++ following conventions - (eg. descriptive props, keyed v-for)
+
+HTML/CSS:
+- only one feature of preprocessor used (nesting), no variables, mixing, etc.
+- no semantic html tags (a lot of divs, poor accessibility);
+- styling the same thing twice on a single file (App.vue —> #app)
+- inline styling in some places
++ styles are divided and scoped per component;
+
+JS:
+- naming convention could be better (eg. Boolean variables starting with `is` || `are` (allBearsRenderedAlready -> areAllBearsRendered)
+- `let self = this;` used instead of arrow function
+- mix of ES5 and ES6: 
+- variables (`var`, `let`, `const`)
+- sometimes using arrow functions, sometimes not
+- sometimes using string interpolation, sometimes not
+
+Vue:
+- event modifiers sometimes unnecessary used (Details.vue -> .native on button tag)
+- views could be divided into components to improve readability
+- a lot of logic in the templates
+
+Test:
+- no tests

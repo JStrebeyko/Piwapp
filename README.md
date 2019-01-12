@@ -7,7 +7,7 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn start
 ```
 
 ### Compiles and minifies for production
@@ -19,3 +19,6 @@ yarn run build
 ```
 yarn run lint
 ```
+### TODO
+- [x] cleanup
+- [ ] trickle down (add20)
