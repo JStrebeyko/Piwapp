@@ -9,7 +9,7 @@
             infinite-scroll-distance="10">
         <beers-grid :beers="fetchedBeers"
                     @clicked="open"
-                    :enough="allBearsRenderedAlready"/>
+                    :enough="areAllBearsRenderedAlready"/>
         <div class="loading" v-if="isLoading">
           <img src="@/assets/beer.png" class="spinning"/>
         </div>
@@ -20,7 +20,7 @@
                   @closed="close"
                   :error="error"
                   :key="currentBeerIndex"
-                  :enough="allBearsRenderedAlready"/>
+                  :enough="areAllBearsRenderedAlready"/>
   </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
       fetchedBeers: [],
       isLoading: false,
       pageIndex: 0,
-      allBearsRenderedAlready: false,
+      areAllBearsRenderedAlready: false,
       currentBeerIndex: null,
       intervalID:"",
       error: false
@@ -76,7 +76,7 @@ export default {
             bool==false ? self.isLoading = false: false;
           });
       } else {
-        this.allBearsRenderedAlready = true;
+        this.areAllBearsRenderedAlready = true;
         clearInterval(this.intervalID)
       }
     },
@@ -120,7 +120,7 @@ export default {
     },
     // helper function
     calculateBatch(n) {
-      var i = 1;
+      let i = 1;
       while (n >  i * NUM_PER_BATCH) {
         i++
       }
@@ -133,8 +133,7 @@ export default {
       // for requests for (only) 80 beers and (only) every second, we need
       // to set intervals every second to fetch a batch of 80 specified
       // number of times.
-      var i = 1;
-      let self = this;
+      let i = 1;
       this.isLoading = true
       this.intervalID = setInterval(() => {
           if (i < n) {
@@ -142,7 +141,7 @@ export default {
             i++;
           } else {
             this.isLoading=false;
-            clearInterval(self.intervalID);
+            clearInterval(this.intervalID);
           }
         }, 1000
       )
@@ -182,10 +181,7 @@ export default {
 body {
   margin: 0;
 }
-#app {
-  position: relative;
-  height: auto;
-}
+
 .details-open {
   overflow: hidden;
 }
@@ -209,18 +205,21 @@ body {
     }
   }
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-
+  position: relative;
+  height: auto;
 }
 
 @font-face {
   font-family: Against;
   src: url('./assets/font/against.otf');
 }
+
 #nav {
   background-color: rgba(100, 100, 100,0.6);
   height: 150px;

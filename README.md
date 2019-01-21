@@ -29,20 +29,20 @@ overall:
 
 HTML/CSS
 - [ ] Sass features beyond scoping - mixins, variables
-- [ ]  no semantic html tags (a lot of divs, poor accessibility);
-- [ ] styling the same thing twice on a single file (App.vue —> #app)
-- [ ] inline styling in some places
+- [ ] no semantic html tags (a lot of divs, poor accessibility);
+- [x] styling the same thing twice on a single file (App.vue —> #app)
+- [x] inline styling in some places
 
 JS
-- [ ] naming convention could be better (eg. Boolean variables starting with `is` || `are` (allBearsRenderedAlready -> areAllBearsRendered)
-- [ ] `let self = this;` used instead of arrow function
+- [x] naming convention could be better (eg. Boolean variables starting with `is` || `are` (allBearsRenderedAlready -> areAllBearsRendered)
+- [x] `let self = this;` used instead of arrow function
 - [ ] mix of ES5 and ES6:
-- [ ] variables (`var`, `let`, `const`)
+- [x] variables (`var`, `let`, `const`)
 - [ ] sometimes using arrow functions, sometimes not
 - [ ] sometimes using string interpolation, sometimes not
 
 Vue:
-- [ ] event modifiers sometimes unnecessary used (Details.vue -> .native on button tag)
+- [x] event modifiers sometimes unnecessary used (Details.vue -> .native on button tag)
 - [ ] views could be divided into components to improve readability
 - [ ] a lot of logic in the templates
 

@@ -2,83 +2,84 @@
   <transition
     name="slide"
   >
-  <div class="details-overlay" @click.stop="close">
-    <button class="return" @click.native="close">BACK</button>
-    <beer-link :to="index+1" class="next" ref="next">
-      <svg v-if="!error" x="0px" y="0px" viewBox="0 0 232.153 232.153" style="enable-background:new 0 0 232.153 232.153;z-index:2" xml:space="preserve">
-        <g id="Play">
-          <path style="fill-rule:evenodd;clip-rule:evenodd;" fill="orange" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266
-            c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267
-            l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z"/>
-        </g>
-      </svg>
-    </beer-link>
-        <beer-link :to="index-1" class="prev" ref="prev" v-if="index-1>=0">
-      <svg v-if="!error" x="0px" y="0px" viewBox="0 0 232.153 232.153" style="enable-background:new 0 0 232.153 232.153;z-index:2" xml:space="preserve">
-        <g id="Play">
-          <path style="fill-rule:evenodd;clip-rule:evenodd;" fill="orange" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266
-            c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267
-            l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z"/>
-        </g>
-      </svg>
-    </beer-link>
-
-    <div @click.stop class="card">
-      <div v-if="error===true" style="width:512px;height:600px">
-        <svg class="error" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" >
-          <path fill="orange" d="M256,64c105.875,0,192,86.125,192,192s-86.125,192-192,192S64,361.875,64,256S150.125,64,256,64 M256,32  C132.281,32,32,132.281,32,256s100.281,224,224,224s224-100.281,224-224S379.719,32,256,32L256,32z M192,144  c-17.688,0-32,21.5-32,48c0,26.531,14.313,48,32,48s32-21.469,32-48C224,165.5,209.688,144,192,144z M320,144  c-17.688,0-32,21.5-32,48c0,26.531,14.313,48,32,48s32-21.469,32-48C352,165.5,337.688,144,320,144z M393.594,364.813  c7.063-5.313,8.5-15.344,3.219-22.406C363.719,298.313,311.094,272,256,272s-107.734,26.313-140.797,70.406  c-5.313,7.063-3.875,17.094,3.188,22.406c7.078,5.281,17.094,3.844,22.406-3.219C167.859,325.531,210.922,304,256,304  c45.063,0,88.156,21.531,115.188,57.594C374.344,365.781,379.156,368,384,368C387.344,368,390.719,366.969,393.594,364.813z"/>
+    <div class="details-overlay" @click.stop="close">
+      <button class="return" @click="close">BACK</button>
+      <beer-link :to="index+1" class="next" ref="next">
+        <svg v-if="!error" x="0px" y="0px" viewBox="0 0 232.153 232.153" class="arrow" xml:space="preserve">
+          <g id="Play">
+            <path fill="orange" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266
+              c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267
+              l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z"/>
+          </g>
         </svg>
-        <h2 class="error-message">SORRY, WE DON'T HAVE THAT BEER</h2>
-      </div>
-      <div v-else-if="mainBeer">
-        <main>
-          <div class="image">
-            <img :src="mainBeer.image_url"/>
-          </div>
-          <div class="text-content">
-            <h3>{{mainBeer.name}}</h3>
-            <h4>{{mainBeer.tagline}}</h4>
-            <div class="stats">
-              <strong>IBU:</strong> {{mainBeer.ibu || "--"}}
-              <strong>ABV:</strong> {{mainBeer.abv || "--"}}
-              <strong>EBC:</strong> {{mainBeer.ebc || "--"}}
+      </beer-link>
+      <beer-link :to="index-1" class="prev" ref="prev" v-if="index-1>=0">
+        <svg v-if="!error" x="0px" y="0px" viewBox="0 0 232.153 232.153" class="arrow" xml:space="preserve">
+          <g id="Play">
+            <path fill="orange" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266
+              c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267
+              l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z"/>
+          </g>
+        </svg>
+      </beer-link>
+
+      <div @click.stop class="card">
+        <div v-if="error===true" class="error-container">
+          <svg class="
+          " x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" >
+            <path fill="orange" d="M256,64c105.875,0,192,86.125,192,192s-86.125,192-192,192S64,361.875,64,256S150.125,64,256,64 M256,32  C132.281,32,32,132.281,32,256s100.281,224,224,224s224-100.281,224-224S379.719,32,256,32L256,32z M192,144  c-17.688,0-32,21.5-32,48c0,26.531,14.313,48,32,48s32-21.469,32-48C224,165.5,209.688,144,192,144z M320,144  c-17.688,0-32,21.5-32,48c0,26.531,14.313,48,32,48s32-21.469,32-48C352,165.5,337.688,144,320,144z M393.594,364.813  c7.063-5.313,8.5-15.344,3.219-22.406C363.719,298.313,311.094,272,256,272s-107.734,26.313-140.797,70.406  c-5.313,7.063-3.875,17.094,3.188,22.406c7.078,5.281,17.094,3.844,22.406-3.219C167.859,325.531,210.922,304,256,304  c45.063,0,88.156,21.531,115.188,57.594C374.344,365.781,379.156,368,384,368C387.344,368,390.719,366.969,393.594,364.813z"/>
+          </svg>
+          <h2 class="error-message">SORRY, WE DON'T HAVE THAT BEER</h2>
+        </div>
+        <div v-else-if="mainBeer">
+          <main>
+            <div class="image">
+              <img :src="mainBeer.image_url"/>
             </div>
-            <p>{{mainBeer.description}}</p>
-            <p>{{mainBeer.brewers_tips}}</p>
-            <div class="food"><p>It goes well with:</p>
-              <ul>
-                <li v-for="pair in mainBeer.food_pairing" :key="pair">{{pair}}</li>
-              </ul>
+            <div class="text-content">
+              <h3>{{mainBeer.name}}</h3>
+              <h4>{{mainBeer.tagline}}</h4>
+              <div class="stats">
+                <strong>IBU:</strong> {{mainBeer.ibu || "--"}}
+                <strong>ABV:</strong> {{mainBeer.abv || "--"}}
+                <strong>EBC:</strong> {{mainBeer.ebc || "--"}}
+              </div>
+              <p>{{mainBeer.description}}</p>
+              <p>{{mainBeer.brewers_tips}}</p>
+              <div class="food"><p>It goes well with:</p>
+                <ul>
+                  <li v-for="pair in mainBeer.food_pairing" :key="pair">{{pair}}</li>
+                </ul>
+              </div>
             </div>
+          </main>
+        <p class="you-might">You might as well like these:</p>
+        <div class="suggestions">
+          <div v-if="ibuBeer" class="box">
+              <span class="tag">similar IBU</span>
+            <beer-link :to="`${ibuBeer.id-1}`">
+              <img :src="ibuBeer.image_url"/><br/>
+              <span>{{ibuBeer.name}}</span>
+            </beer-link>
           </div>
-        </main>
-      <p class="you-might">You might as well like these:</p>
-      <div class="suggestions">
-        <div v-if="ibuBeer" class="box">
-            <span class="tag">similar IBU</span>
-          <beer-link :to="`${ibuBeer.id-1}`">
-            <img :src="ibuBeer.image_url"/><br/>
-            <span>{{ibuBeer.name}}</span>
-          </beer-link>
-        </div>
-        <div v-if="abvBeer" class="box">
-            <span class="tag">similar ABV</span>
-          <beer-link :to="`${abvBeer.id-1}`">
-            <img :src="abvBeer.image_url"/><br/>
-            <span>{{abvBeer.name}}</span>
-          </beer-link>
-        </div>
-        <div v-if="ebcBeer" class="box">
-            <span class="tag">similar EBC</span>
-          <beer-link :to="`${ebcBeer.id-1}`">
-            <img :src="ebcBeer.image_url"/><br/>
-            <span>{{ebcBeer.name}}</span>
-          </beer-link>
+          <div v-if="abvBeer" class="box">
+              <span class="tag">similar ABV</span>
+            <beer-link :to="`${abvBeer.id-1}`">
+              <img :src="abvBeer.image_url"/><br/>
+              <span>{{abvBeer.name}}</span>
+            </beer-link>
+          </div>
+          <div v-if="ebcBeer" class="box">
+              <span class="tag">similar EBC</span>
+            <beer-link :to="`${ebcBeer.id-1}`">
+              <img :src="ebcBeer.image_url"/><br/>
+              <span>{{ebcBeer.name}}</span>
+            </beer-link>
+          </div>
         </div>
       </div>
-     </div>
-     </div>
-     </div>
+      </div>
+    </div>
   </transition>
 </template>
 
@@ -92,7 +93,7 @@ export default {
       type: Array,
     },
     index: {
-      type: Number
+      type: [Number, String]
     },
     error: {
       type: Boolean,
@@ -267,22 +268,30 @@ button::-moz-focus-inner {
       transform: scale(1.2);
       transition: 500ms;
     }
-
   }
+
+  .arrow {
+    enable-background: new 0 0 232.153 232.153;
+    z-index:2;
+  }
+
   .next,
   .prev {
     width:100px;
     position: fixed;
     top: 50vh;
-      transition: 500ms;
-
+    transition: 500ms;
+    path {
+      fill-rule:evenodd;
+      clip-rule:evenodd;
+    }
   }
   .next {
     right:2px;
-      &:hover {
-    transform: scale(1.2);
-    transition: 500ms;
-      }
+    &:hover {
+      transform: scale(1.2);
+      transition: 500ms;
+    }
   }
   .prev {
     left: 2px;
@@ -307,10 +316,17 @@ button::-moz-focus-inner {
     max-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-          letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
 
-    .error-message {
-      color:orange;margin-top:600px;font-size:4rem;text-align:center;
+    &.error-container {
+      width:512px;
+      height:600px;
+      &.error-message {
+        color:orange;
+        margin-top:600px;
+        font-size:4rem;
+        text-align:center;
+      }
     }
     main {
       display: flex;
@@ -346,7 +362,7 @@ button::-moz-focus-inner {
         }
         p {
           margin-bottom: 0;
-          line-height: 2rem;
+          line-height: 1.3rem;
         }
         .stats {
           display: flex;
@@ -381,8 +397,13 @@ button::-moz-focus-inner {
           .tag {
             position: absolute;
             font-size: 0.7rem;
-
-            top: -2rem;
+            top: 0rem;
+            right: 1rem;
+            background-color: orange;
+            padding: 2px 6px;
+            border-radius: 8px;
+            border: 3px dotted grey;
+            color: white;
           }
         a {
           color: inherit;
@@ -417,4 +438,5 @@ button::-moz-focus-inner {
   transform: translateY(100vh) rotateY(90deg);
   opacity:0;
 }
+
 </style>
